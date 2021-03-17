@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NewGame from "./views/NewGame";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="ui grid container">
+        <div className="five wide column"></div>
+        <div className="six wide column">
+          <div className="header">
+            <h2 class="ui large center aligned blue icon header">
+              <i class="circular wheelchair blue icon"></i>
+              <p className="header-content">BlackJack</p>
+            </h2>
+          </div>
+        </div>
+        <div className="five wide column"></div>
+        <div className="play-area">
+          <NewGame />
+        </div>
+      </div>
     </div>
   );
 }
