@@ -1,12 +1,12 @@
 import "./App.css";
-import NewGame from "./views/NewGame/NewGame";
 import { Router, navigate } from "@reach/router";
+import NewGame from "./views/NewGame/NewGame";
 import Table from "./views/Table/Table";
-
 function App() {
   const clickHandler = () => {
     navigate("/play");
   };
+
   return (
     <div className="App">
       <Router>
