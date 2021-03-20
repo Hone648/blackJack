@@ -9,16 +9,15 @@ const NewGame = ({ clickHandler }) => {
       backgroundPosition: "center",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
-      height: "100vh",
-      width: "100vw",
+      height: "103vh",
     },
     header: {
       color: "red",
       marginTop: "10vh",
     },
     image: {
-      height: "25%",
-      width: "30%",
+      height: "50vh",
+      width: "25vw",
     },
   };
 
