@@ -2,8 +2,8 @@ import React from "react";
 import cards from "../CardImgs";
 
 const Card = ({ card, height, width }) => {
-  let ourCard = cards.card;
-
+  let ourCard = cards[card];
+  console.log(`from card.js ${card}`);
   const myStyles = {
     container: {
       background: `url(${ourCard})`,
@@ -16,6 +16,7 @@ const Card = ({ card, height, width }) => {
       color: "black",
     },
   };
+
   return (
     <div className="card-container">
       <div className="ui grid">

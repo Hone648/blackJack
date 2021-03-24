@@ -8,15 +8,15 @@ const buildDeck = () => {
   let suits = ["H", "D", "C", "S"];
   let values = [
     "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "0",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
     "J",
     "Q",
     "K",
@@ -28,7 +28,6 @@ const buildDeck = () => {
   }
   return deck;
 };
-
 const shuffleDeck = (deck) => {
   let shuffledDeck = [];
   for (let i = 0; i < 52; i++) {
@@ -38,20 +37,9 @@ const shuffleDeck = (deck) => {
   }
   return shuffledDeck;
 };
-const getValue = (card) => {
-  let value = card[0];
-  if (value === "0" || value === "K" || value === "Q" || value === "J") {
-    value = 10;
-  } else if (value === "A") {
-    value = 11;
-  }
-  return parseInt(value);
-};
 
 let deck = buildDeck();
 let shuffledDeck = shuffleDeck(deck);
-console.log(getValue(shuffledDeck[0]));
-
 function App() {
   const clickHandler = () => {
     navigate("/play");

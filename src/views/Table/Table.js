@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../../components/Card";
+import getValue from "../../GetValue";
 
 const cardHeight = 27;
 const cardWidth = cardHeight * 0.741;
@@ -20,26 +21,22 @@ const myStyles = {
   },
 };
 
-const Table = ({ shuffledDeck }) => {
-  const [cardOne, setCardOne] = useState({
-    suit: "S",
-    face: "J",
-    value: 10,
-  });
-  const [cardTwo, setCardTwo] = useState({
-    suit: "D",
-    face: "A",
-    value: 11,
-  });
+const Table = ({ deck }) => {
+  const drawFromDeck = (deck) => {
+    let drawnCard = deck[0];
+    deck.splice(0, 1);
+    return drawnCard;
+  };
+  const cardOne = drawFromDeck(deck);
+  const cardTwo = drawFromDeck(deck);
+  console.log(`from table.js card one is ${cardOne}`);
+  console.log(`from table.js card two is ${cardTwo}`);
   return (
     <div>
       <div style={myStyles.container}>
         <div className="ui stackable centered grid">
           <div style={myStyles.cardContainer} className="two wide column">
             <Card card={cardOne} height={cardHeight} width={cardWidth} />
-          </div>
-          <div style={myStyles.cardContainer} className="two wide column">
-            <Card card={cardTwo} height={cardHeight} width={cardWidth} />
           </div>
           <div style={myStyles.cardContainer} className="two wide column">
             <Card card={cardTwo} height={cardHeight} width={cardWidth} />
