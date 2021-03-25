@@ -3,7 +3,6 @@ import cards from "../CardImgs";
 
 const Card = ({ card, height, width }) => {
   let ourCard = cards[card];
-  console.log(`from card.js ${card}`);
   const myStyles = {
     container: {
       background: `url(${ourCard})`,

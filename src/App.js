@@ -38,6 +38,12 @@ const shuffleDeck = (deck) => {
   return shuffledDeck;
 };
 
+const drawFromDeck = (deck) => {
+  let drawnCard = deck[0];
+  deck.splice(0, 1);
+  return drawnCard;
+};
+
 let deck = buildDeck();
 let shuffledDeck = shuffleDeck(deck);
 function App() {
@@ -49,7 +55,7 @@ function App() {
     <div className="App">
       <Router>
         <NewGame path="/" clickHandler={clickHandler} />
-        <Table deck={shuffledDeck} path="/play" />
+        <Table deck={shuffledDeck} drawFromDeck={drawFromDeck} path="/play" />
       </Router>
     </div>
   );

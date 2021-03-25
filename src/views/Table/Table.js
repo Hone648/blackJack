@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/Card";
 import getValue from "../../GetValue";
 
@@ -21,25 +21,30 @@ const myStyles = {
   },
 };
 
-const Table = ({ deck }) => {
-  const drawFromDeck = (deck) => {
-    let drawnCard = deck[0];
-    deck.splice(0, 1);
-    return drawnCard;
-  };
-  const cardOne = drawFromDeck(deck);
-  const cardTwo = drawFromDeck(deck);
-  console.log(`from table.js card one is ${cardOne}`);
-  console.log(`from table.js card two is ${cardTwo}`);
+const Table = ({ deck, drawFromDeck }) => {
   return (
     <div>
       <div style={myStyles.container}>
         <div className="ui stackable centered grid">
           <div style={myStyles.cardContainer} className="two wide column">
-            <Card card={cardOne} height={cardHeight} width={cardWidth} />
+            <Card
+              card={drawFromDeck(deck)}
+              height={cardHeight}
+              width={cardWidth}
+            />
           </div>
           <div style={myStyles.cardContainer} className="two wide column">
-            <Card card={cardTwo} height={cardHeight} width={cardWidth} />
+            <Card
+              card={drawFromDeck(deck)}
+              height={cardHeight}
+              width={cardWidth}
+            />
+          </div>
+          <div style={myStyles.cardContainer} className="two wide column">
+            <Card card="none" height={cardHeight} width={cardWidth} />
+          </div>
+          <div style={myStyles.cardContainer} className="two wide column">
+            <Card card="none" height={cardHeight} width={cardWidth} />
           </div>
         </div>
       </div>
